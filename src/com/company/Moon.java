@@ -10,18 +10,4 @@ public class Moon extends CelestialObject {
         this.mass = mass;
         this.coords = coords;
     }
-    public String getName() {
-        return name;
-    }
-    public int getMass(){
-        return mass;
-    }
-    public String getUnicode(){
-        return unicode;
-    }
-    public Point getCoords(){
-        return coords;
-    }
-
-
 }

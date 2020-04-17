@@ -9,9 +9,22 @@ public class CelestialObject {
     String unicode;
     int mass;
 
+    public String getName() {
+        return name;
+    }
+    public String getUnicode(){
+        return unicode;
+    }
+    public int getMass(){
+        return mass;
+    }
+    public Point getCoords(){
+        return coords;
+    }
+
     public void identificateUnicode(LinkedList<Planet> planetList){
         for (int i = 0; i < planetList.size(); i++) {
-            if ((planetList.get(i).name).equals(name)) {
+            if ((planetList.get(i).getName()).equals(name)) {
                 System.out.println( planetList.get(i).getUnicode() );
             } else {
                 for (int j = 0; j < planetList.size(); j++) {

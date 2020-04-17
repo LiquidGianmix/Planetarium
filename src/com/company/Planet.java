@@ -13,18 +13,7 @@ public class Planet extends CelestialObject {
         this.mass = mass;
         this.coords = coords;
     }
-    public String getName() {
-        return name;
-    }
-    public int getMass() {
-        return mass;
-    }
-    public String getUnicode(){
-        return unicode;
-    }
-    public Point getCoords(){
-        return coords;
-    }
+
 
 
     LinkedList<Moon> moonList = new LinkedList<Moon>();
@@ -32,17 +21,17 @@ public class Planet extends CelestialObject {
     void addMoon(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Give me a name");
-        String nome = sc.next();
+        String name = sc.next();
         System.out.println("Give me unicode");
         String unicode = sc.next();
         System.out.println("Give me mass");
-        int massa = sc.nextInt();
+        int mass = sc.nextInt();
         System.out.println("Give me coordinate x");
         int coordsx = sc.nextInt();
         System.out.println("Give me coordinate y");
         int coordsy = sc.nextInt();
 
-        Moon tempMoon = new Moon(nome, unicode, massa, new Point (coordsx, coordsy));
+        Moon tempMoon = new Moon(name, unicode, mass, new Point (coordsx, coordsy));
         moonList.add(tempMoon);
     }
 
@@ -52,23 +41,23 @@ public class Planet extends CelestialObject {
 
     void removeMoon() {
         for (int i = 0; i < moonList.size(); i++) {
-            System.out.println((i + 1) + ")" + moonList.get(i).name);
+            System.out.println((i + 1) + ")" + moonList.get(i).getName());
         }
         System.out.println("What moon do you want to cancel?");
         Scanner sc = new Scanner(System.in);
         String nameYoureLookingFor = sc.nextLine();
 
         for (int j = 0; j < moonList.size(); j++) {
-            if(moonList.get(j).name.equals(nameYoureLookingFor)){
+            if(moonList.get(j).getName().equals(nameYoureLookingFor)){
                 moonList.remove(j);
-                System.out.println(moonList.get(j).name + "has been removed" );
+                System.out.println(moonList.get(j).getName() + "has been removed" );
                 break;
             }
         }
     }
     public boolean hasMoon(String name){
         for (int i = 0; i < moonList.size(); i++) {
-            if ((moonList.get(i).name).equals(name)){
+            if ((moonList.get(i).getName()).equals(name)){
                 return true;
             }
         }
@@ -76,7 +65,7 @@ public class Planet extends CelestialObject {
     }
     public void printMoons(LinkedList<Planet> planetList){
         for(int i = 0; i < planetList.size(); i++){
-            System.out.println(planetList.get(i).name);
+            System.out.println(planetList.get(i).getName());
         }
     }
 

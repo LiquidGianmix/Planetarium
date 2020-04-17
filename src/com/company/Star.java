@@ -15,19 +15,10 @@ public class Star extends CelestialObject {
         this.mass = mass;
         this.coords = new Point( 0,0);
     }
-    public String getName() {
-        return name;
-    }
-    public String getUnicode(){
-        return unicode;
-    }
-    public int getMass(){
-        return mass;
-    }
-    public Point getCoords(){
-        return coords;
-    }
 
+    LinkedList<Planet> getPlanets(){
+        return planetList;
+    }
     LinkedList<Planet> planetList = new LinkedList<Planet>();
 
 
@@ -49,16 +40,16 @@ public class Star extends CelestialObject {
     }
     void removePlanet() {
         for (int i = 0; i < planetList.size(); i++) {
-            System.out.println((i + 1) + ")" + planetList.get(i).name);
+            System.out.println((i + 1) + ")" + planetList.get(i).getName());
         }
         System.out.println("What planet do you want to cancel?");
         Scanner sc = new Scanner(System.in);
         String nameYoureLookingFor = sc.nextLine();
 
         for (int j = 0; j < planetList.size(); j++) {
-            if(planetList.get(j).name.equals(nameYoureLookingFor)){
+            if(planetList.get(j).getName().equals(nameYoureLookingFor)){
                 planetList.remove(j);
-                System.out.println(planetList.get(j).name + "has been removed" );
+                System.out.println(planetList.get(j).getName() + "has been removed" );
                 break;
             }
         }
