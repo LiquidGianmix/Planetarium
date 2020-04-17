@@ -22,7 +22,7 @@ public class Planet extends CelestialObject {
     public String getUnicode(){
         return unicode;
     }
-    public Point coords(){
+    public Point getCoords(){
         return coords;
     }
 
@@ -44,6 +44,10 @@ public class Planet extends CelestialObject {
 
         Moon tempMoon = new Moon(nome, unicode, massa, new Point (coordsx, coordsy));
         moonList.add(tempMoon);
+    }
+
+    LinkedList<Moon> getMoons(){
+        return moonList;
     }
 
     void removeMoon() {

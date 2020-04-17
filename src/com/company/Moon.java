@@ -19,7 +19,7 @@ public class Moon extends CelestialObject {
     public String getUnicode(){
         return unicode;
     }
-    public Point coords(){
+    public Point getCoords(){
         return coords;
     }
 
