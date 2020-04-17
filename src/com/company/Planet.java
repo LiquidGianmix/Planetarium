@@ -46,7 +46,7 @@ public class Planet extends CelestialObject {
         moonList.add(tempMoon);
     }
 
-    void removePlanet() {
+    void removeMoon() {
         for (int i = 0; i < moonList.size(); i++) {
             System.out.println((i + 1) + ")" + moonList.get(i).name);
         }
