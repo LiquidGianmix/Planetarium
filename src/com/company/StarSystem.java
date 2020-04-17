@@ -1,7 +1,6 @@
 package com.company;
 
 import java.awt.*;
-import java.sql.SQLOutput;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -27,7 +26,6 @@ public class StarSystem {
             }
         }
         return  false;
-
     }
     void addStar(){
         Scanner sc = new Scanner(System.in);
@@ -52,33 +50,29 @@ public class StarSystem {
             }
     }
 
-
-    public double calculateCenterOfMass() {
-        return (CoordXCenterOfMass(), CoordYCenterOfMass())
-
-    }
-
-    public double CoordXCenterOfMass(LinkedList<Planet> planetList){
-        double weightedmass = 0;
+    public void calculateCenterOfMass() {
+        LinkedList<Planet> planetList = star.getPlanets();
+        double xmass = 0;
+        double ymass = 0;
         double totalmass = 0;
-        for(Planet p : planetList){
-            for(Moon m:  p.getMoons()){
+        for (Planet p : planetList) {
             totalmass = totalmass + p.getMass();
-            weightedmass = weightedmass + p.getMass() * p.getCoords().getX();
-        }
+
+            xmass += p.getMass() * p.getCoords().getX();
+            ymass += p.getMass() * p.getCoords().getX();
+            for (Moon m : p.getMoons()) {
+                totalmass = totalmass + m.getMass();
+                xmass += m.getMass() * m.getCoords().getX();
+                ymass += m.getMass() * m.getCoords().getY();
             }
-        return weightedmass / totalmass;
-    }
-
-    public double CoordYCenterOfMass(LinkedList<Planet> planetList){
-        double weightedmass = 0;
-        double totalmass = 0;
-        for(Planet p : planetList){
-            totalmass += p.getMass();
-            weightedmass += p.getMass() * p.getCoords().getY();
         }
-        return weightedmass / totalmass;
+        totalmass = totalmass + star.getMass();
+        xmass += star.getMass() * 0;
+        ymass += star.getMass() * 0;
+
+        int x = (int) (xmass / totalmass);
+        int y = (int) (ymass / totalmass);
+
+        System.out.println( new Point(x, y));
     }
-
-
 }
