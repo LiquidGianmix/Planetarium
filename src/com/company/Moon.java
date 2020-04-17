@@ -13,5 +13,15 @@ public class Moon extends CelestialObject {
     public String getName() {
         return name;
     }
+    public int getMass(){
+        return mass;
+    }
+    public String getUnicode(){
+        return unicode;
+    }
+    public Point coords(){
+        return coords;
+    }
+
 
 }

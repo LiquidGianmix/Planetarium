@@ -16,7 +16,15 @@ public class Planet extends CelestialObject {
     public String getName() {
         return name;
     }
-
+    public int getMass() {
+        return mass;
+    }
+    public String getUnicode(){
+        return unicode;
+    }
+    public Point coords(){
+        return coords;
+    }
 
 
     LinkedList<Moon> moonList = new LinkedList<Moon>();
@@ -24,9 +32,9 @@ public class Planet extends CelestialObject {
     void addMoon(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Give me a name");
-        String nome = sc.nextLine();
+        String nome = sc.next();
         System.out.println("Give me unicode");
-        String unicode = sc.nextLine();
+        String unicode = sc.next();
         System.out.println("Give me mass");
         int massa = sc.nextInt();
         System.out.println("Give me coordinate x");
@@ -62,4 +70,10 @@ public class Planet extends CelestialObject {
         }
         return false;
     }
+    public void printMoons(LinkedList<Planet> planetList){
+        for(int i = 0; i < planetList.size(); i++){
+            System.out.println(planetList.get(i).name);
+        }
+    }
+
 }

@@ -1,50 +1,35 @@
 package com.company;
 
 import java.awt.*;
-import java.util.ListIterator;
-import java.util.Scanner;
+import java.util.LinkedList;
+
 
 public class StarSystem {
 
     public void findObject(){
 
+    }
 
-        Star star = new Star();
+    public int calculateCenterOfMass(LinkedList<Planet> planetList, Point coords){
 
-
-        Scanner sc = new Scanner(System.in);
-        String nameYoureLookingFor = sc.nextLine();
-
-        ListIterator<Planet> planetIterator = planetLinkedListObject.listIterator();
-        boolean exists = false;
-        while (planetIterator.hasNext() && exists == false) {
-            Planet currentPlanet = planetIterator.next();
-            if (currentPlanet.getName().equals(nameYoureLookingFor)) {
-                exists = true;
-            } else {
-                ListIterator<Moon> moonIterator = currentPlanet.getMoonLinkedListObject.listIterator();
-                while (moonIterator.hasNext() && exists == false) {
-                    Moon currentMoon = moonIterator.next();
-                    if (currentMoon.getName().equals(nameYoureLookingFor){
-                        exists = true;
-                    }
-                }
+        public float XPosition(LinkedList<Planet> planetList){
+            int weightedmass = 0;
+            int totalmass = 0;
+            for(Planet p : planetList){
+                totalmass = totalmass + p.getMass();
+                weightedmass = weightedmass + p.getMass() * Point.getX();
             }
-            return exists;
+            return weightedmass / totalmass;
         }
 
-        /* Basically you're iterating through your planets and if the planet name matches the search name,
-         you make exists = true which takes you out of the loop.
-         If the planet name doesn't match the search name, you iterate through
-         that planet's moons and check each moon to see if they match the search name.
-        If one of them does you set exists = true. If they don't you move on to the next planet and do the same thing.
-        */
-    }
-    public void calculateCenterOfMass(int mass, Point coords){
-
-    }
-
-    public void moonOrbitsAround(){
-
+        public int YPosition(LinkedList<Planet> planetList){
+            int weightedmass = 0;
+            int totalmass = 0;
+            for(Planet p : planetList){
+                totalmass += p.getMass();
+                weightedmass += p.getMass() * Point.getY();
+            }
+            return weightedmass / totalmass;
+        }
     }
 }

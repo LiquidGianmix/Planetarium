@@ -18,6 +18,15 @@ public class Star extends CelestialObject {
     public String getName() {
         return name;
     }
+    public String getUnicode(){
+        return unicode;
+    }
+    public int getMass(){
+        return mass;
+    }
+    public Point getCoords(){
+        return coords;
+    }
 
     LinkedList<Planet> planetList = new LinkedList<Planet>();
 
@@ -25,9 +34,9 @@ public class Star extends CelestialObject {
     void addPlanet(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Give me name");
-        String name = sc.nextLine();
+        String name = sc.next();
         System.out.println("Give me unicode");
-        String unicode = sc.nextLine();
+        String unicode = sc.next();
         System.out.println("Give me mass");
         int mass = sc.nextInt();
         System.out.println("Give me coordinate x");
@@ -62,5 +71,17 @@ public class Star extends CelestialObject {
             }
         }
     }
+
+    public void orbitsAround(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the name of a planet to see which moons orbit around it");
+        String name = input.nextLine();
+        for(int i = 0; i < planetList.size(); i++){
+            if(planetList.get(i).name.equals(name)){
+                planetList.get(i).printMoons(planetList);
+            }
+        }
+    }
+
 }
 
