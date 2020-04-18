@@ -12,6 +12,9 @@ public class StarSystem {
     public StarSystem(Star s){
         this.star = s;
     }
+   // Star getStar(Star){
+    //    this.star = star;
+    //}
 
     public boolean findObject(String name){
         LinkedList<Planet> planetList = star.getPlanets();
@@ -37,6 +40,7 @@ public class StarSystem {
         int mass = sc.nextInt();
 
         Star tempStar = new Star(name, unicode, mass);
+
     }
     void removeStar() {
         System.out.println(star.name);
