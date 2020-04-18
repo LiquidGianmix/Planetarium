@@ -56,7 +56,7 @@ public class Star extends CelestialObject {
     void getMoonPath(String name){
         for (int i = 0; i < planetList.size(); i++) {
             if(planetList.get(i).hasMoon(name)){
-                System.out.println(this.name + " > " + planetList.get(i) + " > " + name);
+                System.out.println(this.name + " > " + planetList.get(i).name + " > " + name);
 
             }
         }

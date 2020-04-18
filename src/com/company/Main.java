@@ -67,6 +67,10 @@ public class Main {
                             starSystem.star.removePlanet();
                             break;
                         case 3:
+                            if (starSystem.star.planetList.isEmpty()){
+                                System.out.println("Planet list is empty, there are no planets");
+                                break;
+                            }
                             for (int i = 0; i < starSystem.star.planetList.size(); i++) {
                                 starSystem.star.planetList.get(i).removeMoon();
                             }
@@ -75,7 +79,9 @@ public class Main {
                             System.out.println("Wrong lmaooo");
                             break;
                     }
+                    break;
                 case 4:
+                    System.out.println("Insert name of the celestial body");
                     String newinput = input.next();
                     if (starSystem.findObject(newinput)) {
                         System.out.println("It exists");

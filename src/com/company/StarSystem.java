@@ -13,22 +13,31 @@ public class StarSystem {
         this.star = s;
     }
 
-    public boolean findObject(String name){
-        System.out.println("Insert name of the celestial body");
+    public boolean findObject(String name) {
+
         LinkedList<Planet> planetList = star.getPlanets();
-        for (Planet p : planetList){
-            if(p.getName().equals(name))
+        if (planetList.isEmpty()) {
+            if (star.getName().equals(name)) {
                 return true;
-            else{
-                for (Moon m : p.getMoons()){
-                    if(m.getName().equals(name))
-                        star.orbitsAround(name);
-                        return true;
+            } else return false;
+        } else {
+            for (Planet p : planetList) {
+                if (p.getName().equals(name) || star.getName().equals(name)) {
+                    return true;
+                } else {
+                    LinkedList<Moon> moonList = p.getMoons();
+                    for (Moon m : p.getMoons()) {
+                        if (m.getName().equals(name)) {
+                            star.orbitsAround(name);
+                            return true;
+                        }
+                    }
                 }
             }
+            return false;
         }
-        return  false;
     }
+
     void addStar(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Give me a name");
@@ -76,6 +85,6 @@ public class StarSystem {
         int x = (int) (xmass / totalmass);
         int y = (int) (ymass / totalmass);
 
-        System.out.println( "The center of mass is " + new Point(x, y));
+        System.out.println( "The center of mass is " + "("+ x +"," +y+")" );
     }
 }
