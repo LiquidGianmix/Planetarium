@@ -18,11 +18,8 @@ public class Planet extends CelestialObject {
 
     LinkedList<Moon> moonList = new LinkedList<Moon>();
 
-    void addMoon(Star star){
-        star.printPlanets();
+    public void addMoon(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a number to select a Planet");
-        int index = sc.nextInt();
         System.out.println("Give me a name");
         String name = sc.next();
         System.out.println("Give me unicode");
@@ -35,7 +32,7 @@ public class Planet extends CelestialObject {
         int coordsy = sc.nextInt();
 
         Moon tempMoon = new Moon(name, unicode, mass, new Point (coordsx, coordsy));
-        star.getPlanets().get(index).moonList.add(tempMoon);
+        this.moonList.add(tempMoon);
     }
 
     LinkedList<Moon> getMoons(){

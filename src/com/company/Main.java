@@ -38,16 +38,32 @@ public class Main {
                 break;
 
             case 2:
-                starSystem.star.p.addMoon();
+                starSystem.star.printPlanets();
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Enter a number to select a Planet");
+                int index = sc.nextInt();
+                starSystem.star.getPlanets().get(index).addMoon();
                 break;
 
             case 3:
                 System.out.println("Do you want to remove a planet a star or a moon?");
-                starSystem.removeStar();
-                starSystem.star.removePlanet();
-                starSystem.star.removeMoon();
-                break;
-
+                int whichone = input.nextInt();
+                System.out.println("1. Remove star");
+                System.out.println("2. Remove a planet");
+                System.out.println("3. Remove a moon");
+                switch (whichone) {
+                    case 1:
+                        starSystem.removeStar();
+                    case 2:
+                        starSystem.star.removePlanet();
+                    case 3:
+                        for (int i = 0; i < starSystem.star.planetList.size(); i++) {
+                            starSystem.star.planetList.get(i).removeMoon();
+                        }
+                    default:
+                        System.out.println("Wrong lmaooo");
+                        break;
+                }
             case 4:
                 String newinput = input.next();
                 if(starSystem.findObject(newinput)) {
@@ -65,10 +81,10 @@ public class Main {
                 break;
 
             case 6:
-                starSystem.star.getMoonPath;
-
+                System.out.println("Write the moon's name to get a path");
+                String moonName = input.next();
+                starSystem.star.getMoonPath(name);
                 break;
-
             case 7:
 
                 break;
