@@ -12,11 +12,9 @@ public class StarSystem {
     public StarSystem(Star s){
         this.star = s;
     }
-   // Star getStar(Star){
-    //    this.star = star;
-    //}
 
     public boolean findObject(String name){
+        System.out.println("Insert name of the celestial body");
         LinkedList<Planet> planetList = star.getPlanets();
         for (Planet p : planetList){
             if(p.getName().equals(name))
@@ -48,10 +46,10 @@ public class StarSystem {
         Scanner sc = new Scanner(System.in);
         String nameYoureLookingFor = sc.nextLine();
             if(star.name.equals(nameYoureLookingFor)){
-                System.out.println(star.name + "has been removed" );
+                System.out.println(star.name + " has been removed" );
             }
             else{
-                System.out.println(nameYoureLookingFor + "is not a star");
+                System.out.println(nameYoureLookingFor + " is not a star");
             }
     }
 
@@ -78,6 +76,6 @@ public class StarSystem {
         int x = (int) (xmass / totalmass);
         int y = (int) (ymass / totalmass);
 
-        System.out.println( new Point(x, y));
+        System.out.println( "The center of mass is " + new Point(x, y));
     }
 }

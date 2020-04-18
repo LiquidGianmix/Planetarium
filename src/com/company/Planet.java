@@ -19,20 +19,20 @@ public class Planet extends CelestialObject {
     LinkedList<Moon> moonList = new LinkedList<Moon>();
 
     public void addMoon(){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Give me a name");
-        String name = sc.next();
-        System.out.println("Give me unicode");
-        String unicode = sc.next();
-        System.out.println("Give me mass");
-        int mass = sc.nextInt();
-        System.out.println("Give me coordinate x");
-        int coordsx = sc.nextInt();
-        System.out.println("Give me coordinate y");
-        int coordsy = sc.nextInt();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Give me a name");
+            String name = sc.next();
+            System.out.println("Give me unicode");
+            String unicode = sc.next();
+            System.out.println("Give me mass");
+            int mass = sc.nextInt();
+            System.out.println("Give me coordinate x");
+            int coordsx = sc.nextInt();
+            System.out.println("Give me coordinate y");
+            int coordsy = sc.nextInt();
 
-        Moon tempMoon = new Moon(name, unicode, mass, new Point (coordsx, coordsy));
-        this.moonList.add(tempMoon);
+            Moon tempMoon = new Moon(name, unicode, mass, new Point(coordsx, coordsy));
+            this.moonList.add(tempMoon);
     }
 
     LinkedList<Moon> getMoons(){
