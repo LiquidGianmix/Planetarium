@@ -62,10 +62,7 @@ public class Star extends CelestialObject {
         }
     }
 
-    public void orbitsAround(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter the name of a planet to see which moons orbit around it");
-        String name = input.nextLine();
+    public void orbitsAround(String name){
         for(int i = 0; i < planetList.size(); i++){
             if(planetList.get(i).name.equals(name)){
                 planetList.get(i).printMoons();

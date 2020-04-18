@@ -24,6 +24,7 @@ public class StarSystem {
             else{
                 for (Moon m : p.getMoons()){
                     if(m.getName().equals(name))
+                        star.orbitsAround(name);
                         return true;
                 }
             }

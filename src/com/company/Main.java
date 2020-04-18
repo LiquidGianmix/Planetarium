@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+        System.out.println("Create a star first!");
         System.out.println("Give me a name");
         String name = input.next();
         System.out.println("Give me unicode");
@@ -85,10 +86,6 @@ public class Main {
                 String moonName = input.next();
                 starSystem.star.getMoonPath(name);
                 break;
-            case 7:
-
-                break;
-
             default:
                 System.out.println("Invalid number");
 

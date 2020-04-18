@@ -22,7 +22,7 @@ public class CelestialObject {
         return coords;
     }
 
-    public void identificateUnicode(LinkedList<Planet> planetList){
+    /*public void identificateUnicode(LinkedList<Planet> planetList){           resterino in piecerino useless function!
         for (int i = 0; i < planetList.size(); i++) {
             if ((planetList.get(i).getName()).equals(name)) {
                 System.out.println( planetList.get(i).getUnicode() );
@@ -36,5 +36,5 @@ public class CelestialObject {
                 }
             }
         }
-    }
+    }  */
 }
