@@ -71,7 +71,7 @@ public class StarSystem {
             totalmass = totalmass + p.getMass();
 
             xmass += p.getMass() * p.getCoords().getX();
-            ymass += p.getMass() * p.getCoords().getX();
+            ymass += p.getMass() * p.getCoords().getY();
             for (Moon m : p.getMoons()) {
                 totalmass = totalmass + m.getMass();
                 xmass += m.getMass() * m.getCoords().getX();
@@ -82,8 +82,8 @@ public class StarSystem {
         xmass += star.getMass() * 0;
         ymass += star.getMass() * 0;
 
-        int x = (int) (xmass / totalmass);
-        int y = (int) (ymass / totalmass);
+        double x =  (xmass / totalmass);
+        double y =  (ymass / totalmass);
 
         System.out.println( "The center of mass is " + "("+ x +"," +y+")" );
     }
