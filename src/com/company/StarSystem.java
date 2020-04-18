@@ -50,16 +50,22 @@ public class StarSystem {
         Star tempStar = new Star(name, unicode, mass);
 
     }
+
     void removeStar() {
-        System.out.println(star.name);
-        Scanner sc = new Scanner(System.in);
-        String nameYoureLookingFor = sc.nextLine();
-            if(star.name.equals(nameYoureLookingFor)){
-                System.out.println(star.name + " has been removed" );
-            }
-            else{
+        if(star==null){
+            System.out.println("there is no star in this system anymore");
+        }
+        else {
+            System.out.println("This is the star system's star: " + star.name);
+            Scanner sc = new Scanner(System.in);
+            String nameYoureLookingFor = sc.nextLine();
+            if (star.name.equals(nameYoureLookingFor)) {
+                System.out.println(star.name + " has been removed");
+                star = null;
+            } else {
                 System.out.println(nameYoureLookingFor + " is not a star");
             }
+        }
     }
 
     public void calculateCenterOfMass() {

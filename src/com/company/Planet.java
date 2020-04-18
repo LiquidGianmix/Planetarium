@@ -41,7 +41,7 @@ public class Planet extends CelestialObject {
 
     void removeMoon() {
         for (int i = 0; i < moonList.size(); i++) {
-            System.out.println((i + 1) + ")" + moonList.get(i).getName());
+            System.out.println(moonList.get(i).getName());
         }
         System.out.println("What moon do you want to cancel?");
         Scanner sc = new Scanner(System.in);
@@ -50,7 +50,7 @@ public class Planet extends CelestialObject {
         for (int j = 0; j < moonList.size(); j++) {
             if(moonList.get(j).getName().equals(nameYoureLookingFor)){
                 moonList.remove(j);
-                System.out.println(moonList.get(j).getName() + "has been removed" );
+                System.out.println("That moon has been removed" );
                 break;
             }
         }

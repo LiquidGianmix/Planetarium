@@ -39,7 +39,7 @@ public class Star extends CelestialObject {
     }
     void removePlanet() {
         for (int i = 0; i < planetList.size(); i++) {
-            System.out.println((i + 1) + ")" + planetList.get(i).getName());
+            System.out.println(planetList.get(i).getName());
         }
         System.out.println("What planet do you want to cancel?");
         Scanner sc = new Scanner(System.in);
@@ -48,7 +48,7 @@ public class Star extends CelestialObject {
         for (int j = 0; j < planetList.size(); j++) {
             if(planetList.get(j).getName().equals(nameYoureLookingFor)){
                 planetList.remove(j);
-                System.out.println(planetList.get(j).getName() + "has been removed" );
+                System.out.println("That planet has been removed" );
                 break;
             }
         }
