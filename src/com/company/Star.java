@@ -61,14 +61,6 @@ public class Star extends CelestialObject {
             }
         }
     }
-
-    public void orbitsAround(String name){
-        for(int i = 0; i < planetList.size(); i++){
-            if(planetList.get(i).name.equals(name)){
-                planetList.get(i).printMoons();
-            }
-        }
-    }
     public void printPlanets(){
         for(int i = 0; i < planetList.size(); i++){
             System.out.println(i + ". " + planetList.get(i).getName());

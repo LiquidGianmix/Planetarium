@@ -22,13 +22,14 @@ public class StarSystem {
             } else return false;
         } else {
             for (Planet p : planetList) {
-                if (p.getName().equals(name) || star.getName().equals(name)) {
+                if (p.getName().equals(name)) {
+                    System.out.println("Moons of" + p.getName());
+                    p.printMoons();
                     return true;
                 } else {
                     LinkedList<Moon> moonList = p.getMoons();
                     for (Moon m : p.getMoons()) {
-                        if (m.getName().equals(name)) {
-                            star.orbitsAround(name);
+                        if (m.getName().equals(name) || star.getName().equals(name)) {
                             return true;
                         }
                     }
