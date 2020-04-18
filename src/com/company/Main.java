@@ -14,7 +14,8 @@ public class Main {
         System.out.println("Give me mass");
         int mass = input.nextInt();
 
-        StarSystem s = new StarSystem(new Star(name, unicode, mass));
+        StarSystem starSystem = new StarSystem(new Star(name, unicode, mass));
+
 
         System.out.println("Hello Emperors of the Galaxy!");
         System.out.println("\n*** WELCOME TO THE  P L A N E T A R I U M ***");
@@ -33,23 +34,23 @@ public class Main {
         switch (choice) {
 
             case 1:
-                .addPlanet();
+                starSystem.star.addPlanet();
                 break;
 
             case 2:
-                s.addMoon();
+                starSystem.star.p.addMoon();
                 break;
 
             case 3:
                 System.out.println("Do you want to remove a planet a star or a moon?");
-                s.removeStar();
-                removePlanet();
-                removeMoon();
+                starSystem.removeStar();
+                starSystem.star.removePlanet();
+                starSystem.star.removeMoon();
                 break;
 
             case 4:
                 String newinput = input.next();
-                if(s.findObject(newinput)) {
+                if(starSystem.findObject(newinput)) {
                     System.out.println("It exists");
                 }
                     else{
@@ -60,11 +61,11 @@ public class Main {
 
             case 5:
             System.out.println("Calculating center of mass please wait: [...]");
-                s.calculateCenterOfMass();
+                starSystem.calculateCenterOfMass();
                 break;
 
             case 6:
-                s.getMoonPath;
+                starSystem.star.getMoonPath;
 
                 break;
 

@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Star extends CelestialObject {
 
 
-
     public Star(String name, String unicode, int mass){
         this.name=name;
         this.unicode = unicode;
